@@ -1,0 +1,17 @@
+neofetch/
+neofetch
+
+dotfiles/
+dotfiles
+
+*.log
+*.pyc
+.vscode/
+.vscode
+
+*.env
+*.cfg
+
+node_modules/
+node_modules
+
