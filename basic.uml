@@ -1,0 +1,31 @@
+@startuml
+left to right direction
+skinparam packageStyle rectangle
+ACTOR u1 AS "Basic User"
+ACTOR u2 AS "Critic User"
+ACTOR u3 AS "Guest User"
+ACTOR u4 AS "Admin User"
+ACTOR IMDB
+IMDB <<3rd Party API>>
+u1 <|-- u2
+u1 <|-- u4
+
+USECASE REG AS "User Registration and Signup
+--
+Verify details and send email for verification"
+USECASE moviedata AS "Request movie data 
+--
+Search for the movie and retrieve relevant information"
+USECASE post AS "Create New Post 
+--
+Create post for a movie to start a new thread"
+
+u1 --> REG
+u1 --> moviedata
+u3 --> moviedata
+
+
+u1 --> post
+
+post .> moviedata : include
+@enduml
